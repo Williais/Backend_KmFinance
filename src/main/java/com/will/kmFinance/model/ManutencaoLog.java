@@ -13,7 +13,7 @@ import java.util.UUID;
 public class ManutencaoLog {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @ManyToOne
@@ -22,7 +22,7 @@ public class ManutencaoLog {
     @OneToOne
     private LancamentoFinanceiro lancamentoFinanceiro;
 
-
+    private String tipoItem;
     private Integer odometroNoMomento;
     private LocalDate data_manutencao;
     private String observacao;

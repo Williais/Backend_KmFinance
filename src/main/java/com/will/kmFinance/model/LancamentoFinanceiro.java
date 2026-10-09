@@ -16,7 +16,7 @@ import java.util.UUID;
 public class LancamentoFinanceiro {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @ManyToOne
@@ -25,8 +25,10 @@ public class LancamentoFinanceiro {
     @ManyToOne
     private Turno turno;
 
+    @Enumerated(EnumType.STRING)
     private TipoFinanceiro tipoFinanceiro;
 
+    @Enumerated(EnumType.STRING)
     private Categoria categoria;
 
     private BigDecimal valor;

@@ -14,7 +14,7 @@ import java.util.UUID;
 public class Turno {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -29,5 +29,6 @@ public class Turno {
     private Integer odometroInicial;
     private Integer odometroFinal;
 
+    @Enumerated(EnumType.STRING)
     private Status status;
 }

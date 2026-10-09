@@ -1,10 +1,7 @@
 package com.will.kmFinance.model;
 
 import com.will.kmFinance.model.enums.Plataforma;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,10 +14,14 @@ import java.util.UUID;
 public class RegistroPlataforma {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Enumerated(EnumType.STRING)
     private Plataforma plataforma;
+
+    @ManyToOne
+    private Turno turno;
 
     private BigDecimal valorFaturado;
     private BigDecimal kmRodadoApp;

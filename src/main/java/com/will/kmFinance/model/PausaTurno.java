@@ -1,11 +1,10 @@
 package com.will.kmFinance.model;
 
-import com.will.kmFinance.model.enums.Plataforma;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -14,14 +13,9 @@ import java.util.UUID;
 public class PausaTurno {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Turno turno_id;
-
-    private Plataforma plataforma;
-    private BigDecimal valorFaturado;
-    private BigDecimal kmRodadoApp;
-    private Integer quantidadeCorridas;
+    private LocalDateTime dataHoraInicio;
+    private LocalDateTime dataHoraFim;
 }
