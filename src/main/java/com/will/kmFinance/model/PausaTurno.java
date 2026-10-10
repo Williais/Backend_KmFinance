@@ -18,4 +18,7 @@ public class PausaTurno {
 
     private LocalDateTime dataHoraInicio;
     private LocalDateTime dataHoraFim;
+
+    @ManyToOne
+    private Turno turno;
 }
